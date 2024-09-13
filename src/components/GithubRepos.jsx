@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { FaStar, FaCodeBranch, FaExclamationCircle } from 'react-icons/fa'; // Import icons
+import { StarIcon, ForkIcon, IssueIcon } from './Icons';
 
 function GithubRepo({ repo, fetchGithubRepo }) {
     return (
@@ -17,7 +18,7 @@ function GithubRepo({ repo, fetchGithubRepo }) {
                         <img src={repo.owner.avatar_url} alt={repo.owner.login} className="w-16 h-16 rounded-full border-2 border-gray-200" />
                         <div>
                             <h2 className="text-2xl font-bold text-blue-600 hover:underline">
-                                <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                                <a href={repo.html_url} target="_blank">
                                     {repo.name}
                                 </a>
                             </h2>
@@ -29,15 +30,15 @@ function GithubRepo({ repo, fetchGithubRepo }) {
 
                     <div className="flex justify-between items-center text-gray-600 text-sm">
                         <div className="flex items-center space-x-2">
-                            <FaStar className="text-yellow-500" />
+                            <StarIcon />
                             <span>{repo.stargazers_count}</span>
                         </div>
                         <div className="flex items-center space-x-2">
-                            <FaCodeBranch className="text-green-500" />
+                            <ForkIcon />
                             <span>{repo.forks_count}</span>
                         </div>
                         <div className="flex items-center space-x-2">
-                            <FaExclamationCircle className="text-red-500" />
+                            <IssueIcon />
                             <span>{repo.open_issues_count}</span>
                         </div>
                         <div className="flex items-center space-x-2">
