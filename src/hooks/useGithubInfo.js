@@ -11,9 +11,7 @@ export default function useGithubInfo(language) {
                 q: `language:${language}`,
                 sort: 'stars',
                 order: 'desc',
-                headers: {
-                    'X-GitHub-Api-Version': '2022-11-28'
-                }
+              
             });
 
             const data = response.data;
